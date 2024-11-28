@@ -1,0 +1,404 @@
+/* Root Styles for Global Settings */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Body Layout */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background 0.5s ease;
+}
+
+.app {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+/* Search Icon */
+.search-icon {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.search-icon img {
+  width: 24px;
+  height: 50px;
+}
+
+
+
+.image img {
+  width: 100px;
+  height: 100px;
+}
+
+.temp {
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #faf8f8;
+}
+
+.location {
+  font-size: 1.5em;
+  margin-top: 5px;
+  color: #fff;
+}
+
+.cord {
+  font-size: 1.1em;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.cord div {
+  margin: 5px 0;
+}
+
+.data-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.element {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data .humidity-percent,
+.data .wind-speed {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.data .text {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* Light and Dark Mode Styles */
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #ffffff;
+    --text-color: #0d86ef;
+  }
+
+ 
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    width: 200%;
+    border: 2px solid rgba(250, 228, 228, 0.8); /* Define the border */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(245, 244, 244, 0.5);
+    margin-top: 80px;
+    margin-right: 260px;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+    
+  }
+ 
+}
+
+
+/* Wrapper for input and icon */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.cityInput {
+  padding: 10px;  
+  font-size: 1.1em;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 500%;
+  background-color: transparent;
+  color: #fdf9f9;
+  margin-bottom: 20px;
+ 
+}
+.cityInput::placeholder {
+  color: #fffdfc;  /* Change to any color you prefer */
+}
+
+
+.cityInput:focus {
+  outline: none;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Search icon inside the input */
+.input-wrapper .search-icon {
+  position: absolute;
+  top: 25%;
+  right: 20px; /* Position the icon on the left side */
+  transform: translateY(-50%);
+  width: 30px;
+  height: 24px;
+  pointer-events: painted; /* Prevent the icon from interfering with input clicks */
+}
+
+.input-wrapper .search-icon img {
+  width: 100%;
+  height: 100%;
+}
+/* Background video */
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Send the video behind the content */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Ensure content appears above the video */
+}
+
+/* Weather content */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.input-wrapper {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.weather-details {
+  margin-top: 20px;
+}
+
+.image img {
+  width: 100px;
+}
+
+.temp {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.location {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.data-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.element {
+  text-align: center;
+}
+
+.icon {
+  width: 50px;
+}
+
+.humidity-percent, .wind-speed {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 14px;
+  color: lightgray;
+}
+
+/* Additional styles for Date, Time, and Day display */
+.date-time {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.time,
+.date,
+.day {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Make the content scrollable */
+.app {
+  overflow-y: auto;
+  min-height: 100vh; /* Ensure the app takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  padding-bottom: 50px; /* Give space for the date-time display */
+}
+
+/* Styling the input wrapper */
+.input-wrapper {
+  margin-bottom: 20px;
+}
+.heading{
+  width: 1250px;
+  text-align: left ;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  font-size: 18px;
+}
+/* Chart container styles */
+/* Graph Container */
+.graph-container {
+  margin: 10px auto;
+  padding-right: 55%;
+  width: 70%;
+  max-width: 550px;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  border-color: #e00707 ;
+}
+
+.graph-container h3 {
+  font-size: 1.5rem;
+  text-align: right 60px;
+  color: #f8c600;
+  margin-bottom: 15px;
+}
+
+.graph-container canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Date and Time */
+.date-time {
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #f5d8d8;
+}
+
+.date-time .time {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.date-time .date,
+.date-time .day {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 800px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .temp {
+    font-size: 9rem;
+  }
+
+  .location {
+    font-size: 1rem;
+  }
+
+  .graph-container {
+    padding: 15px;
+  }
+
+  .graph-container h3 {
+    font-size: 1.2rem;
+  }
+}
+.weather-icons-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+}
+
+.icon-container img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.icon-container p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
